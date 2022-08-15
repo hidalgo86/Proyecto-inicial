@@ -1,0 +1,25 @@
+.container {
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  gap: 2px;
+}
+
+.input {
+  text-align: center;
+  width: 205px;
+  height: 20px;
+  font-size: 12px;
+  align-self: center;
+  border: none;
+  border-radius: 20px;
+}
+
+.button {
+  width: 90px;
+  height: 25px;
+  font-size: 14px;
+  align-self: center;
+  border-radius: 10px;
+}

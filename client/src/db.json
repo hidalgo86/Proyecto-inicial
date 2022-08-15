@@ -1,0 +1,20 @@
+{
+  "dogs": [
+    {
+      "id": 1,
+      "name": "dog 1",
+      "temperament": "amistoso",
+      "weight": "10",
+      "height": "10",
+      "lifeSpan": "10"
+    },
+    {
+      "id": 2,
+      "name": "dog 2",
+      "temperament": "activo",
+      "weight": "20",
+      "height": "20",
+      "lifeSpan": "20"
+    }
+  ]
+}

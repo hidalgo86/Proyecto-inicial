@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+}
+
+.containerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.pag {
+  font-size: 15px;
+}
+
+.button {
+  width: 85px;
+  height: 25px;
+  font-size: 14px;
+  align-self: center;
+  border-radius: 10px;
+}

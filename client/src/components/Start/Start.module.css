@@ -1,0 +1,34 @@
+.conteiner {
+  margin: 0px;
+  padding: 0px;
+  /* background-image: url("../../img/start.jpg");
+  background-size: cover; */
+  width: auto;
+  height: 100vh;
+}
+
+.titulo {
+  color: white;
+  font-size: 100px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: calc(50% - 230px);
+}
+
+.img {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.conteiner_btn {
+  text-align: center;
+  padding: 20px;
+}
+
+.button {
+  width: 90px;
+  height: 25px;
+  font-size: 20px;
+  align-self: center;
+  border-radius: 10px;
+}
