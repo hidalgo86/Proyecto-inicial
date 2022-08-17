@@ -1,12 +1,7 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px calc(100vh - 100px);
 }
 
 .containerButton {
@@ -14,7 +9,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 2px solid #e5e5e5;
 }
 
 .pag {

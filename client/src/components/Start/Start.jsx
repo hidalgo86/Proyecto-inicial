@@ -18,11 +18,9 @@ export default function Start() {
       <div className={styles.img}>
         <img src={logo} alt="" />
       </div>
-      <div className={styles.conteiner_btn}>
         <Link to="/home">
           <button className={styles.button}>START</button>
         </Link>
-      </div>
     </div>
   );
 }

@@ -27,7 +27,9 @@ const Paginate = () => {
 
   return (
     <div className={styles.container}>
+
       <div className={styles.containerButton}>
+
         <button className={styles.button} type="submit" onClick={previous}>
           PREVIOUS
         </button>
@@ -39,11 +41,13 @@ const Paginate = () => {
         <button className={styles.button} type="submit" onClick={next}>
           NEXT
         </button>
+
       </div>
 
-      <div className={styles.containerPaginated}>
+      <div>
         <Dogs pag={pagActual} />
       </div>
+
     </div>
   );
 };

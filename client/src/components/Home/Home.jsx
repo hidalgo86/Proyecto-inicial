@@ -18,23 +18,23 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>
-        <div>
-          <Link to="/">
-            <img className={styles.img} src={logo} alt="" />
-          </Link>
-        </div>
+        <Link to="/">
+          <img className={styles.img} src={logo} alt="" />
+        </Link>
+
         <div className={styles.searchBar}>
           <SearchBar />
         </div>
-        <div>
-          <Link to="/createDogs">
-            <button className={styles.button}>Create</button>
-          </Link>
-        </div>
+
+        <Link to="/createDogs">
+          <button className={styles.button}>Create</button>
+        </Link>
       </div>
+
       <div className={styles.filter}>
         <Filter />
       </div>
+
       <div className={styles.paginated}>
         <Paginated />
       </div>

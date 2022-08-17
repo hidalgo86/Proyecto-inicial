@@ -117,8 +117,7 @@ export const createDogs = ({
   lifeSpanMax,
   temperaments,
 }) => {
-  temperaments = temperaments.map((temperament) => +temperament.split(":")[0]);
-  let lifeSpan = lifeSpanMin + " - " + lifeSpanMax + " years";
+
   return function (dispatch) {
     axios
       .post("http://localhost:3001/dogs", {
@@ -127,7 +126,8 @@ export const createDogs = ({
         heightMax,
         weightMin,
         weightMax,
-        lifeSpan,
+        lifeSpanMin,
+        lifeSpanMax,
         temperaments,
       })
       .then((response) =>

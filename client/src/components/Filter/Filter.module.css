@@ -1,47 +1,18 @@
-.container {
-  display: flex;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 10px;
-  margin-top: 50px;
-  gap: 5px;
-}
-
-.asc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
 }
 
-.desc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.weight {
-  display: flex;
-  gap: 10px;
-}
-
-.weight input {
-  width: 50px;
+.input {
+  border-radius: 10px;
 }
 
 .button {
   width: 90px;
   height: 25px;
-  font-size: 20px;
-  align-self: center;
-  border-radius: 10px;
-}
-
-.input {
+  margin-left: 20px;
+  font-size: 14px;
   border-radius: 10px;
 }

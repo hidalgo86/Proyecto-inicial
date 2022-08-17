@@ -82,7 +82,7 @@
 /******************** Dog Detail *******************************/
 
 .containerDetail {
-  background-color: white;
+  background-color: rgb(214, 238, 248);
   border: 1px solid black;
   border-radius: 20px;
   width: 500px;

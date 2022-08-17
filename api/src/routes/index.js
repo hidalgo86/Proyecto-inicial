@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const { dogsAll, dogsId, temperaments } = require("../controllers");
 const { Dog, Temperament } = require("../db.js");
+const  { validate } = require("./validate");
 
 const router = Router();
 
@@ -90,18 +91,28 @@ router.post("/dogs", async (req, res) => {
       heightMax,
       weightMin,
       weightMax,
-      lifeSpan,
+      lifeSpanMin,
+      lifeSpanMax,
       temperaments,
     } = req.body;
-    const data = await Dog.create({
+
+    let temperament = temperaments.map((temperament) => +temperament.split(":")[0]);
+    let lifeSpan = lifeSpanMin + " - " + lifeSpanMax + " years";
+
+    let validator = validate(req.body);
+
+    if (Object.keys(validator).length > 0) {
+      res.status(400).json(validator);
+    } else {
+      const data = await Dog.create({
       name: name,
       height: `${heightMin} - ${heightMax}`,
       weight: `${weightMin} - ${weightMax}`,
       lifeSpan: lifeSpan,
     });
-    await data.addTemperaments(temperaments);
+    await data.addTemperaments(temperament);
 
-    res.status(200).json(data);
+    res.status(200).json(data);}
   } catch (error) {
     res.status(500).json(error.message);
   }

@@ -38,6 +38,7 @@ const Filter = () => {
         <label htmlFor="temperament">
           <b>Temperament:</b>
         </label>
+
         <select
           className={styles.input}
           id="temperament"
@@ -88,6 +89,7 @@ const Filter = () => {
           <option value="decrement">Weight (Max - Min)</option>
         </select>
 
+        <br />
         <br />
 
         <button className={styles.button} type="submit" onClick={handleSubmit}>
