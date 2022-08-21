@@ -11,7 +11,7 @@ import axios from "axios";
 export const getAllDogs = () => {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/dogs")
+      .get("/dogs")
       .then((response) =>
         dispatch({ type: GET_ALL_DOGS, payload: response.data })
       )
@@ -22,7 +22,7 @@ export const getAllDogs = () => {
 export const getNameDogs = (name) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/dogs?name=${name}`)
+      .get(`/dogs?name=${name}`)
       .then((response) =>
         dispatch({ type: GET_NAME_DOGS, payload: response.data })
       )
@@ -32,7 +32,7 @@ export const getNameDogs = (name) => {
 
 export const getFilterDogs = ({ temperament, breed, order }) => {
   return function (dispatch) {
-    axios.get("http://localhost:3001/dogs").then((response) => {
+    axios.get("/dogs").then((response) => {
       let dataFilter = [];
 
       temperament === "All"
@@ -94,7 +94,7 @@ export const getDetailDog = (idRaza) => {
   return idRaza
     ? function (dispatch) {
         axios
-          .get(`http://localhost:3001/dogs/${idRaza}`)
+          .get(`/dogs/${idRaza}`)
           .then((response) =>
             dispatch({ type: GET_DETAIL_DOG, payload: response.data })
           )
@@ -120,7 +120,7 @@ export const createDogs = ({
 
   return function (dispatch) {
     axios
-      .post("http://localhost:3001/dogs", {
+      .post("/dogs", {
         name,
         heightMin,
         heightMax,
@@ -140,7 +140,7 @@ export const createDogs = ({
 export const getTemperaments = () => {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/temperaments")
+      .get("/temperaments")
       .then((response) =>
         dispatch({ type: GET_TEMPERAMENTS, payload: response.data })
       )

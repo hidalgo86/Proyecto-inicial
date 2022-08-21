@@ -91,6 +91,7 @@ const Filter = () => {
 
         <br />
         <br />
+        <br /> 
 
         <button className={styles.button} type="submit" onClick={handleSubmit}>
           Filter

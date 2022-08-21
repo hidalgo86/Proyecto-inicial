@@ -55,6 +55,7 @@ const CreateDog = () => {
         error: {},
       });
       dispatch(getAllDogs());
+      alert("Dog created successfully");
     } else {
       return;
     }

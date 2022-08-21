@@ -1,10 +1,9 @@
 const { default: axios } = require("axios");
-const { API_KEY } = process.env;
 
 const dogsAll = async (name) => {
   try {
     let api = await axios.get(
-      `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`
+      `https://api.thedogapi.com/v1/breeds`
     );
 
     let dogs = api.data.map((dog) => {
@@ -52,7 +51,7 @@ const dogsAll = async (name) => {
 const dogsId = async (idRaza) => {
   try {
     let api = await axios.get(
-      `https://api.thedogapi.com/v1/breeds/${idRaza}&&api_key=${API_KEY}`
+      `https://api.thedogapi.com/v1/breeds/${idRaza}`
     );
     let data = api.data;
 
@@ -71,7 +70,7 @@ const dogsId = async (idRaza) => {
 const temperaments = async () => {
   try {
     let api = await axios.get(
-      `https://api.thedogapi.com/v1/breeds?&&api_key=${API_KEY}`
+      `https://api.thedogapi.com/v1/breeds`
     );
     let data = api.data.map((item) =>
       item.temperament ? item.temperament.split(", ") : []

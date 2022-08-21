@@ -13,7 +13,7 @@ const Paginate = () => {
 
   useEffect(() => {
     setPagActual(0);
-  }, [dogs, pagMax]);
+  }, [pagMax]);
 
   const previous = () => {
     pagActual === 0 ? setPagActual(pagActual) : setPagActual(pagActual - 1);
