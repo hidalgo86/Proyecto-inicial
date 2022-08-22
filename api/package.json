@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
+    "start": "nodemon .",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
   "author": "Henry",
@@ -33,3 +33,4 @@
     "supertest-session": "^4.1.0"
   }
 }
+
