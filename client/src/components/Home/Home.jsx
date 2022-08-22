@@ -6,10 +6,14 @@ import Paginated from "../Paginated/Paginated";
 import styles from "./Home.module.css";
 import logo from "../../img/dog.png";
 import { useDispatch } from "react-redux";
-import { getTemperaments } from "../../redux/actions";
+import { getAllDogs, getTemperaments } from "../../redux/actions";
 
 const Home = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllDogs());
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getTemperaments());

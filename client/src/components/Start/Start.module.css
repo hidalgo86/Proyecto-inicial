@@ -7,10 +7,11 @@
 
 .titulo {
   color: white;
-  font-size: 100px;
+  font-size: 4rem;
   padding: 20px;
   border-radius: 20px;
-  margin-left: calc(50% - 230px);
+  display: flex;
+  justify-content: center;
 }
 
 .img {
@@ -22,7 +23,7 @@
   padding: 0px;
   width: 90px;
   height: 25px;
-  font-size: 20px;
+  font-size: 1rem;
   border-radius: 10px;
   margin-left: calc(50vw - 45px);
   margin-top: 20px;
