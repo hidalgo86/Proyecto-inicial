@@ -89,7 +89,7 @@ const Filter = () => {
           <option value="decrement">Weight (Max - Min)</option>
         </select>
 
-        <br />
+        
         <br />
         <br /> 
 
