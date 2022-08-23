@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 import Dog from "../Dog/Dog";
 import styles from "./Dogs.module.css";
 
-const Dogs = ({ pag }) => {
+const Dogs = ({ pag, pagDogs }) => {
   const dogs = useSelector((state) => state.dogs);
 
   return (
     <div className={styles.container}>
       {dogs.length ? (
         dogs
-          .slice(pag * 8, pag * 8 + 8)
+          .slice(pag * pagDogs, pag * pagDogs + pagDogs)
           .map((dog) => (
             <Dog
               component="dogs"

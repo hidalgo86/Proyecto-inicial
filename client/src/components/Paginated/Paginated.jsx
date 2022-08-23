@@ -5,15 +5,21 @@ import styles from "./Paginated.module.css";
 
 const Paginate = () => {
   let dogs = useSelector((state) => state.dogs);
-
-  const pagMax = Math.floor(
-    Number.isInteger(dogs.length / 8) ? dogs.length / 8 - 1 : dogs.length / 8
-  );
+ 
+  const [pagDogs, setPagDogs] = useState(8);
   const [pagActual, setPagActual] = useState(0);
+ 
+  const pagMax = Math.floor(
+    Number.isInteger(dogs.length / pagDogs) ? dogs.length / pagDogs - 1 : dogs.length / pagDogs
+  );
 
   useEffect(() => {
     setPagActual(0);
   }, [pagMax]);
+
+  useEffect(() => {
+    window.screen.width >= 750 ? setPagDogs(8) : setPagDogs(4)
+  }, [pagDogs]);
 
   const previous = () => {
     pagActual === 0 ? setPagActual(pagActual) : setPagActual(pagActual - 1);
@@ -45,7 +51,10 @@ const Paginate = () => {
       </div>
 
       <div>
-        <Dogs pag={pagActual} />
+        <Dogs 
+        pag={pagActual}
+        pagDogs={pagDogs}
+        />
       </div>
 
     </div>
