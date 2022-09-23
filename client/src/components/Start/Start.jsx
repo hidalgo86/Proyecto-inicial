@@ -14,7 +14,7 @@ export default function Start() {
 
   return (
     <div className={styles.conteiner}>
-      <b className={styles.titulo}>App Dog</b>
+      <b className={styles.titulo}>App Dogs</b>
       <div className={styles.img}>
         <img src={logo} alt="" />
       </div>
