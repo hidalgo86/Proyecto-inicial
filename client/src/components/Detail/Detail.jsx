@@ -19,12 +19,18 @@ export class Detail extends Component {
   componentDidMount() {
     let id = this.props.match.params.idRaza;
     this.props.getDetailDog(id);
+
     let detail = this.props.detail;
+
     let dog = [];
-    +id > 0
-      ? (dog = this.props.dogs.find((dog) => dog.id === +id))
-      : (dog = this.props.dogs.find((dog) => dog.id === id));
+    dog = JSON.parse(localStorage.getItem("dogs")).find(
+      (dog) => dog.id === +id
+    );
+
     this.setState({ ...this.state, dog: dog, detail: detail });
+
+    localStorage.setItem("id", id);
+    id = localStorage.getItem("id");
   }
 
   componentDidUpdate(prevProps) {

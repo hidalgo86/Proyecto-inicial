@@ -4,7 +4,10 @@ import Dog from "../Dog/Dog";
 import styles from "./Dogs.module.css";
 
 const Dogs = ({ pag, pagDogs }) => {
-  const dogs = useSelector((state) => state.dogs);
+  let dogs = useSelector((state) => state.dogs);
+
+  localStorage.setItem("dogs", JSON.stringify(dogs));
+  dogs = JSON.parse(localStorage.getItem("dogs"));
 
   return (
     <div className={styles.container}>

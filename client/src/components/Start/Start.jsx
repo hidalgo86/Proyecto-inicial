@@ -12,6 +12,8 @@ export default function Start() {
     dispatch(getAllDogs());
   }, [dispatch]);
 
+  
+
   return (
     <div className={styles.conteiner}>
       <b className={styles.titulo}>App Dogs</b>
