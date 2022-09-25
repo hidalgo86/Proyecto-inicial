@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import logo from "../../img/dog.png";
-import styles from "./Start.module.css";
+import styles from "./Landing.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getAllDogs } from "../../redux/actions";
 
-export default function Start() {
+export default function Landing() {
   const dispatch = useDispatch();
 
   useEffect(() => {
