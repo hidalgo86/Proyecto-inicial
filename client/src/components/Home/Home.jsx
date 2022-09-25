@@ -13,6 +13,7 @@ const Home = () => {
 
   const [divice, setDivise] = useState("large");
   const [menu, setMenu] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.screen.width);
 
   useEffect(() => {
     dispatch(getAllDogs());
@@ -22,8 +23,6 @@ const Home = () => {
     dispatch(getTemperaments());
   }, [dispatch]);
 
-  const x = () => {};
-
   useEffect(() => {
     if (window.screen.width >= 900) {
       setDivise("large");
@@ -32,7 +31,7 @@ const Home = () => {
     } else {
       setDivise("smart");
     }
-  }, []);
+  }, [windowWidth]);
 
   const onChangeMenu = (e) => {
     e.preventDefault();
@@ -42,6 +41,12 @@ const Home = () => {
       setMenu(true);
     }
   };
+
+  const onChangeWindow = () => {
+    return setWindowWidth(window.screen.width)
+  };
+
+  window.addEventListener('resize', onChangeWindow) 
 
   return (
     <div className={styles.container}>
