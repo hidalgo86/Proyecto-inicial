@@ -7,6 +7,10 @@ import styles from "./Home.module.css";
 import logo from "../../img/dog.png";
 import { useDispatch } from "react-redux";
 import { getAllDogs, getTemperaments } from "../../redux/actions";
+import { GrFilter } from 'react-icons/gr';
+import { BiEditAlt } from 'react-icons/bi';
+
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -43,6 +47,7 @@ const Home = () => {
   };
 
   const onChangeWindow = () => {
+    localStorage.setItem("with", window.screen.width )
     return setWindowWidth(window.screen.width)
   };
 
@@ -51,6 +56,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>
+      
         <div className={styles.img}>
           <Link to="/">
             <img className={styles.image} src={logo} alt="" />
@@ -63,13 +69,13 @@ const Home = () => {
 
         {divice === "smart" ? (
           <button onClick={onChangeMenu} className={styles.buttonFilter}>
-            Filter
+            <GrFilter /> Filter
           </button>
         ) : null}
 
         <div className={styles.buttonEdit}>
           <Link to="/createDogs">
-            <button className={styles.buttonEdit}>Edit</button>
+            <button className={styles.buttonEdit}><BiEditAlt/> Edit</button>
           </Link>
         </div>
       </div>
