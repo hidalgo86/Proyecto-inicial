@@ -17,13 +17,17 @@ export default function Landing() {
 
   return (
     <div className={styles.conteiner}>
+      
       <b className={styles.titulo}>App Dogs</b>
+     
       <div className={styles.img}>
         <img src={logo} alt="" />
       </div>
+        
         <Link to="/home">
-          <button className={styles.button}>START</button>
+          <button className={styles.button}><b>START</b></button>
         </Link>
+
     </div>
   );
 }

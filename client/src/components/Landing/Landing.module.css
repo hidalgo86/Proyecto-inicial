@@ -5,18 +5,23 @@
   width: 100%;
   height: 100vh;
 }
-.titulo {
+.conteiner .titulo {
   margin-top: 40px;
   color: white;
   font-size: 4rem;
-  border-radius: 20px;
+  border-radius: 10px;
 }
-.img {
+.conteiner .img {
   margin-top: 40px;
 }
-.button {
+.conteiner .button {
   width: 90px;
   height: 25px;
   font-size: 0.8rem;
-  border-radius: 10px;
+  border-radius: 20px;
+  border: rgba(245, 245, 245, 0.418) 1px solid;
+}
+.conteiner .button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.658);
 }
