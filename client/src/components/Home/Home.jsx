@@ -64,7 +64,7 @@ const Home = () => {
           <SearchBar />
         </div>
 
-        {divice === "smart" || divice === "medium" ? (
+        {divice === "smart" ? (
           <button onClick={onChangeMenu} className={styles.buttonFilter}>
             <GrFilter /> Filter 
           </button>
@@ -85,7 +85,7 @@ const Home = () => {
         </div>
       ) : null}
 
-      {divice === "large" ? (
+      {divice === "large" || divice === "medium" ? (
         <div className={styles.filter}>
           <Filter />
         </div>
