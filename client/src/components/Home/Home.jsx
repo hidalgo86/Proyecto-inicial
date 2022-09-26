@@ -7,10 +7,8 @@ import styles from "./Home.module.css";
 import logo from "../../img/dog.png";
 import { useDispatch } from "react-redux";
 import { getAllDogs, getTemperaments } from "../../redux/actions";
-import { GrFilter } from 'react-icons/gr';
-import { BiEditAlt } from 'react-icons/bi';
-
-
+import { GrFilter } from "react-icons/gr";
+import { BiEditAlt } from "react-icons/bi";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -47,16 +45,15 @@ const Home = () => {
   };
 
   const onChangeWindow = () => {
-    localStorage.setItem("with", window.screen.width )
-    return setWindowWidth(window.screen.width)
+    localStorage.setItem("with", window.screen.width);
+    return setWindowWidth(window.screen.width);
   };
 
-  window.addEventListener('resize', onChangeWindow) 
+  window.addEventListener("resize", onChangeWindow);
 
   return (
     <div className={styles.container}>
       <div className={styles.navBar}>
-      
         <div className={styles.img}>
           <Link to="/">
             <img className={styles.image} src={logo} alt="" />
@@ -67,15 +64,17 @@ const Home = () => {
           <SearchBar />
         </div>
 
-        {divice === "smart" ? (
+        {divice === "smart" || divice === "medium" ? (
           <button onClick={onChangeMenu} className={styles.buttonFilter}>
-            <GrFilter /> Filter
+            <GrFilter /> Filter 
           </button>
         ) : null}
 
         <div className={styles.buttonEdit}>
           <Link to="/createDogs">
-            <button className={styles.buttonEdit}><BiEditAlt/> Edit</button>
+            <button className={styles.Edit}>
+              <BiEditAlt /> Edit 
+            </button>
           </Link>
         </div>
       </div>
@@ -86,8 +85,14 @@ const Home = () => {
         </div>
       ) : null}
 
+      {divice === "large" ? (
+        <div className={styles.filter}>
+          <Filter />
+        </div>
+      ) : null}
+
       <div className={styles.paginated}>
-        <Paginated />
+        <Paginated windowWidth={windowWidth} />
       </div>
     </div>
   );

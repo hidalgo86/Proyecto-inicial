@@ -11,6 +11,9 @@
 }
 .container .navBar .img {
   grid-area: img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container .navBar .img .image {
   width: 200px;
@@ -27,6 +30,9 @@
   grid-area: buttonEdit;
   width: 100%;
 }
+.container .navBar .buttonEdit .Edit {
+  width: 100%;
+}
 .container .filter {
   grid-area: filter;
   margin: 10px 0 0 10px;
@@ -35,4 +41,37 @@
   grid-area: paginated;
   display: flex;
   justify-content: center;
+}
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-areas: "navBar navBar" "filter paginated";
+  }
+  .container .navBar {
+    grid-area: navBar;
+    display: grid;
+    grid-template: "img searchBar buttonEdit" 65px/100px auto 150px;
+  }
+  .container .navBar .img {
+    grid-area: img;
+  }
+  .container .navBar .img .image {
+    width: 50px;
+  }
+  .container .navBar .searchBar {
+    grid-area: searchBar;
+    align-items: center;
+  }
+  .container .navBar .buttonEdit {
+    grid-area: buttonEdit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .navBar .buttonEdit .Edit {
+    width: 90px;
+    height: 25px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
 }

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Dogs from "../Dogs/Dogs";
 import styles from "./Paginated.module.css";
 
-const Paginate = () => {
+const Paginate = ({windowWidth}) => {
   let dogs = useSelector((state) => state.dogs);
  
   const [pagDogs, setPagDogs] = useState(8);
@@ -18,8 +18,8 @@ const Paginate = () => {
   }, [pagMax]);
 
   useEffect(() => {
-    window.screen.width >= 750 ? setPagDogs(8) : setPagDogs(4)
-  }, [pagDogs]);
+    window.screen.width >= 900 ? setPagDogs(8) : setPagDogs(4)
+  }, [windowWidth]);
 
   const previous = () => {
     pagActual === 0 ? setPagActual(pagActual) : setPagActual(pagActual - 1);

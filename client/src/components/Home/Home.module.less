@@ -17,6 +17,9 @@
 
     .img {
       grid-area: img;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .image {
         width: 200px;
       }
@@ -32,10 +35,13 @@
       grid-area: buttonFilter;
       // border-radius: 10px;
     }
-
+    
     .buttonEdit {
       grid-area: buttonEdit;
       width: 100%;
+      .Edit{
+        width: 100%;
+      }
     }
   }
 
@@ -48,6 +54,53 @@
     grid-area: paginated;
     display: flex;
     justify-content: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "navBar navBar"
+      "filter paginated";
+
+    .navBar {
+      grid-area: navBar;
+      display: grid;
+      grid-template:
+        "img searchBar buttonEdit" 65px/
+        100px auto 150px;
+
+      .img {
+        grid-area: img;
+        .image {
+          width: 50px;
+        }
+      }
+
+      .searchBar {
+        grid-area: searchBar;
+        align-items: center;
+        // display: flex;
+        // justify-content: center;
+      }
+
+      .buttonEdit {
+        grid-area: buttonEdit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        
+        
+        .Edit {
+          width: 90px;
+          height: 25px;
+          font-size: 14px;
+          border-radius: 10px;
+        }
+      }
+    }
   }
 }
 
