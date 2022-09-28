@@ -51,7 +51,7 @@ export class Detail extends Component {
     return (
       <div>
         <div className={styles.container}>
-          <div className={styles.link}>
+          <div className={styles.navBar}>
             <Link to="/home">
               <button className={styles.button}>Return</button>
             </Link>
@@ -62,7 +62,7 @@ export class Detail extends Component {
               <h1>Loading...</h1>
             </div>
           ) : (
-            <div className={styles.dog}>
+            <div className={styles.detail}>
               <Dog
                 component="detail"
                 id={+dog.id}

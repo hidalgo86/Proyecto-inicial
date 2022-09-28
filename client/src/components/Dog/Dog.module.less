@@ -2,23 +2,27 @@
   margin: 0px;
   padding: 0px;
 }
+
 .notFound {
   display: flex;
   margin-left: 30vw;
   margin-top: 20vh;
   border-radius: 20px;
 }
+
 .notFound .img {
   border-radius: 20px;
 }
+
 /******************** Dog All *******************************/
 .container {
   /* width: 100%;
   height: 100%; */
   display: flex;
 }
+
 .containerDogs {
-  background-color: #d6eef8;
+  background-color: rgb(214, 238, 248);
   border: 1px solid black;
   border-radius: 20px;
   width: 260px;
@@ -28,6 +32,7 @@
   grid-template-columns: 150px 100px;
   grid-template-rows: 35px 140px 50px;
 }
+
 .containerDogs .breed {
   grid-column: 1/3;
   grid-row: 1/2;
@@ -36,11 +41,14 @@
   align-items: center;
   gap: 10px;
   font-size: 15px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
 }
+
 .containerDogs .breed p {
   color: blue;
 }
+
 .containerDogs .image {
   grid-column: 1/2;
   grid-row: 2/3;
@@ -49,6 +57,7 @@
   border-radius: 20px;
   margin-left: 5px;
 }
+
 .containerDogs .containerInfo {
   grid-column: 1/2;
   grid-row: 3/4;
@@ -58,6 +67,7 @@
   margin-left: 5px;
   font-size: 14px;
 }
+
 .containerDogs .temperament {
   grid-column: 2/3;
   grid-row: 2/4;
@@ -66,12 +76,15 @@
   align-items: center;
   font-size: 12px;
 }
+
 .containerDogs .temperamentTitulo {
   font-size: 14px;
 }
+
 /******************** Dog Detail *******************************/
+
 .containerDetail {
-  background-color: #d6eef8;
+  background-color: rgb(214, 238, 248);
   border: 1px solid black;
   border-radius: 20px;
   width: 500px;
@@ -80,6 +93,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 35px 300px 40px 50px;
 }
+
 .containerDetail .breed {
   grid-row: 1/2;
   display: flex;
@@ -87,11 +101,13 @@
   align-items: center;
   font-size: 25px;
 }
+
 .containerDetail .containerImage {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .containerDetail .image {
   grid-row: 2/3;
   width: 300px;
@@ -101,6 +117,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .containerDetail .containerInfo {
   grid-row: 3/4;
   display: flex;
@@ -108,6 +125,7 @@
   margin: 10px 10px 0px 10px;
   font-size: 16px;
 }
+
 .containerDetail .containerTemperament {
   font-size: 16px;
   margin-left: 10px;

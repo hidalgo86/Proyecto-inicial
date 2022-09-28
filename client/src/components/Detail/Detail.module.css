@@ -1,33 +1,31 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px calc(100vh - 50px);
+  grid-template: "navBar" 50px "detail" auto;
 }
-
-.link {
+.container .navBar {
+  grid-area: navBar;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
 }
-
+.container .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.container .detail {
+  grid-area: detail;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 .button {
   width: 90px;
   height: 25px;
   font-size: 14px;
   border-radius: 10px;
   margin-right: 20px;
-}
-
-.dog {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 50px);
 }
