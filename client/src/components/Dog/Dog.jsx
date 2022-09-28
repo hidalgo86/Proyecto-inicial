@@ -38,7 +38,7 @@ const Dog = ({
           {component === "dogs" ? (
             <div className={styles.breed}>
               <Link to={`/home/${id}`}>
-                <b>{name}</b>
+                <p>{name}</p>
               </Link>
             </div>
           ) : null}

@@ -41,9 +41,11 @@
   align-items: center;
   gap: 10px;
   font-size: 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
 }
 
-.containerDogs .breed b {
+.containerDogs .breed p {
   color: blue;
 }
 

@@ -73,7 +73,8 @@ const Home = () => {
         <div className={styles.buttonEdit}>
           <Link to="/createDogs">
             <button className={styles.Edit}>
-              <BiEditAlt /> Edit     / Ancho:{windowWidth}px 
+              <BiEditAlt /> Edit     
+              {/* / Ancho:{windowWidth}px  */}
             </button>
           </Link>
         </div>
