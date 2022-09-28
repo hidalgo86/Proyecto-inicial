@@ -81,7 +81,7 @@ const CreateDog = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.containerButton}>
+      <div className={styles.navBar}>
         <Link to="/home">
           <button className={styles.button}>Return</button>
         </Link>
@@ -89,6 +89,7 @@ const CreateDog = () => {
 
       <div className={styles.containerForm}>
         <form className={styles.form}>
+          
           <div>
             <label htmlFor="name">
               <b>Name: </b>
@@ -124,7 +125,6 @@ const CreateDog = () => {
               className={styles.inputNumber}
               min={0}
             />
-
             {error.heightMin || error.heightMax ? (
               <p className={styles.error}>
                 {error.heightMin} <br /> {error.heightMax}
@@ -167,7 +167,7 @@ const CreateDog = () => {
               placeholder="Min"
               value={dog.lifeSpanMin}
               onChange={handleChange}
-              className={styles.inputNumber}
+              className={styles.inputNumberF}
               min={0}
             />
             <input
