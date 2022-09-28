@@ -1,6 +1,10 @@
 .container {
   display: grid;
   grid-template-areas: "navBar" "filter" "paginated";
+  background-image: url("../../img/start.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 .container .navBar {
   grid-area: navBar;
