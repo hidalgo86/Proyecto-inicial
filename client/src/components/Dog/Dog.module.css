@@ -114,5 +114,6 @@
   flex-direction: column;
   justify-content: start;
   color: black;
+  padding-top: 20px;
   margin: 10px 0px;
 }
