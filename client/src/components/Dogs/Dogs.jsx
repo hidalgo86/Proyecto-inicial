@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Dog from "../Dog/Dog";
 import styles from "./Dogs.module.css";
+import notFound from "../../img/notFound.jpg";
 
 const Dogs = ({ pag, pagDogs }) => {
   let dogs = useSelector((state) => state.dogs);
@@ -26,7 +27,9 @@ const Dogs = ({ pag, pagDogs }) => {
             />
           ))
       ) : (
-        <Dog component="dogs" dog="Not" />
+        <figure>
+          <img src={notFound} alt="notFound" />
+        </figure>
       )}
     </div>
   );

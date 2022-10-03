@@ -16,64 +16,45 @@ const Dog = ({
   dog,
 }) => {
   return (
-    <div className={styles.container}>
-      {dog === "Not" ? (
-        <div className={styles.notFound}>
-          <img className={styles.img} src={notFound} alt="" />
+    <Link to={`/home/${id}`}>
+      <main
+        className={
+          component === "dogs" ? styles.containerDogs : styles.containerDetail
+        }
+      >
+        <h3 className={styles.titulo}>{name}</h3>
+
+        <figure className={styles.image}>
+          <img src={image} alt={name} />
+        </figure>
+
+        <div className={styles.temperament}>
+          <b className={styles.Titulo}>Temperament:</b>
+          <p className={styles.detalle}>{temperament}</p>
         </div>
-      ) : (
-        <div
-          className={
-            component === "dogs"
-              ? styles.containerDogs
-              : component === "detail"
-              ? styles.containerDetail
-              : styles
-          }
-        >
-          <div className={styles.containerImage}>
-            <img className={styles.image} src={image} alt={name} />
+
+        <div className={styles.containerInfo}>
+          <div>
+            <b>Weight: </b>
+            {weight} kg
           </div>
 
-          {component === "dogs" ? (
-            <div className={styles.breed}>
-              <Link to={`/home/${id}`}>
-                <p>{name}</p>
-              </Link>
-            </div>
-          ) : null}
-          {component === "detail" ? (
-            <div className={styles.breed}>
-              <b>{name}</b>
-            </div>
-          ) : null}
-
-          <div className={styles.containerTemperament}>
-            <b className={styles.temperamentTitulo}>Temperament:</b>
-            <p className={styles.temperament}>{temperament}</p>
-          </div>
-
-          <div className={styles.containerInfo}>
-            <p>
-              <b>Weight: </b>
-              {weight} kg
-            </p>
-            {height ? (
+          {height && lifeSpan ? (
+            <div className={styles.heightLifeSpan}>
               <div>
                 <b>Height: </b>
                 {height} cm
               </div>
-            ) : null}
-            {lifeSpan ? (
+
               <div>
                 <b>Life Span: </b>
                 {lifeSpan}
               </div>
-            ) : null}
-          </div>
+            </div>
+          ) : null}
         </div>
-      )}
-    </div>
+      </main>
+    </Link>
   );
 };
 

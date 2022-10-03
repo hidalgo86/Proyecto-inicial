@@ -1,31 +1,48 @@
-.container {
+body {
   display: grid;
-  grid-template: "navBar" 50px "detail" auto;
+  grid-template: "navBar" 50px "main" auto;
 }
-.container .navBar {
+body nav {
   grid-area: navBar;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   border-bottom: 1px solid #e5e5e5;
 }
-.container .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-}
-.container .detail {
-  grid-area: detail;
+body main {
+  grid-area: main;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
-.button {
+body .loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+button {
   width: 90px;
   height: 25px;
   font-size: 14px;
   border-radius: 10px;
   margin-right: 20px;
+}
+.spinner {
+  border: 4px solid white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-left-color: #09f;
+  animation: spin 2s ease infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

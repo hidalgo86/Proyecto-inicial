@@ -49,34 +49,33 @@ export class Detail extends Component {
   render() {
     const { dog, detail, loading } = this.state;
     return (
-      <div>
-        <div className={styles.container}>
-          <div className={styles.navBar}>
-            <Link to="/home">
-              <button className={styles.button}>Return</button>
-            </Link>
-          </div>
+      <body>
+        <nav>
+          <Link to="/home">
+            <button>Return</button>
+          </Link>
+        </nav>
 
-          {loading ? (
-            <div className={styles.loading}>
-              <h1>Loading...</h1>
-            </div>
-          ) : (
-            <div className={styles.detail}>
-              <Dog
-                component="detail"
-                id={+dog.id}
-                image={dog.image}
-                name={dog.name}
-                temperament={dog.temperament.join(", ")}
-                weight={detail.weight}
-                height={detail.height}
-                lifeSpan={detail.lifeSpan}
-              />
-            </div>
-          )}
-        </div>
-      </div>
+        {loading ? (
+          <main className={styles.loading}>
+            <div className={styles.spinner}></div>
+            <h1> Loading...</h1>
+          </main>
+        ) : (
+          <main>
+            <Dog
+              component="detail"
+              id={+dog.id}
+              image={dog.image}
+              name={dog.name}
+              temperament={dog.temperament.join(", ")}
+              weight={detail.weight}
+              height={detail.height}
+              lifeSpan={detail.lifeSpan}
+            />
+          </main>
+        )}
+      </body>
     );
   }
 }
