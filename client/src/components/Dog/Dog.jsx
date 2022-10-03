@@ -35,21 +35,21 @@ const Dog = ({
 
         <div className={styles.containerInfo}>
           <div>
-            <b>Weight: </b>
+            <h4>Weight: </h4>
             {weight} kg
           </div>
 
-          {height && lifeSpan ? (
+          {height ? (
             <div className={styles.heightLifeSpan}>
-              <div>
-                <b>Height: </b>
-                {height} cm
-              </div>
+              <h4>Height: </h4>
+              {height} cm
+            </div>
+          ) : null}
 
-              <div>
-                <b>Life Span: </b>
-                {lifeSpan}
-              </div>
+          {lifeSpan ? (
+            <div className={styles.heightLifeSpan}>
+              <h4>Life Span: </h4>
+              {lifeSpan}
             </div>
           ) : null}
         </div>
