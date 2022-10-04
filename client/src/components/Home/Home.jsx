@@ -8,7 +8,8 @@ import logo from "../../img/dog.png";
 import { useDispatch } from "react-redux";
 import { getAllDogs, getTemperaments } from "../../redux/actions";
 import { GrFilter } from "react-icons/gr";
-import { BiEditAlt } from "react-icons/bi";
+import { FaDog } from "react-icons/fa";
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -73,7 +74,7 @@ const Home = () => {
         <div className={styles.buttonEdit}>
           <Link to="/createDogs">
             <button className={styles.Edit}>
-              <BiEditAlt /> Edit     
+              <FaDog /> add     
               {/* / Ancho:{windowWidth}px  */}
             </button>
           </Link>

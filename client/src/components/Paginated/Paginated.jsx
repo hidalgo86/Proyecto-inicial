@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Dogs from "../Dogs/Dogs";
 import styles from "./Paginated.module.css";
+import { GrFormNext } from "react-icons/gr";
+import { GrFormPrevious } from "react-icons/gr";
+
+
 
 const Paginate = ({windowWidth}) => {
   let dogs = useSelector((state) => state.dogs);
@@ -37,7 +41,7 @@ const Paginate = ({windowWidth}) => {
       <div className={styles.containerButton}>
 
         <button className={styles.button} type="submit" onClick={previous}>
-          PREVIOUS
+        <GrFormPrevious/> PREVIOUS
         </button>
 
         <b className={styles.pag}>
@@ -45,7 +49,7 @@ const Paginate = ({windowWidth}) => {
         </b>
 
         <button className={styles.button} type="submit" onClick={next}>
-          NEXT
+          NEXT <GrFormNext/>
         </button>
 
       </div>

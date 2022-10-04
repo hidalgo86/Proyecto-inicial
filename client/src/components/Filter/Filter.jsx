@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilterDogs } from "../../redux/actions";
 import styles from "./Filter.module.css";
+import { BiSearchAlt } from "react-icons/bi";
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -33,12 +34,11 @@ const Filter = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <form type="submit" onSubmit={handleSubmit} className={styles.form}>
+    <form type="submit" onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.temperament}>
         <label htmlFor="temperament">
-          <b>Temperament:</b>
+          <b>Temperament: </b>
         </label>
-
         <select
           className={styles.input}
           id="temperament"
@@ -53,9 +53,9 @@ const Filter = () => {
             </option>
           ))}
         </select>
+      </div>
 
-        <br />
-
+      <div className={styles.breed}>
         <label htmlFor="breed">
           <b>Breed: </b>
         </label>
@@ -70,9 +70,9 @@ const Filter = () => {
           <option value="Standard">Standard</option>
           <option value="Created">Created</option>
         </select>
+      </div>
 
-        <br />
-
+      <div className={styles.order}>
         <label htmlFor="order">
           <b>Order: </b>
         </label>
@@ -88,15 +88,12 @@ const Filter = () => {
           <option value="increment">Weight (Min - Max)</option>
           <option value="decrement">Weight (Max - Min)</option>
         </select>
+      </div>
 
-        
-        <br />
-
-        <button className={styles.button} type="submit" onClick={handleSubmit}>
-          Filter
-        </button>
-      </form>
-    </div>
+      <button className={styles.search} type="submit" onClick={handleSubmit}>
+        <BiSearchAlt />
+      </button>
+    </form>
   );
 };
 

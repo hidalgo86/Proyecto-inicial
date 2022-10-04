@@ -1,18 +1,94 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
 .input {
   border-radius: 10px;
 }
 
-.button {
-  width: 90px;
-  height: 25px;
-  margin-left: 20px;
-  font-size: 14px;
-  border-radius: 10px;
+@media (max-width: 600px) {
+  .form {
+    display: grid;
+    grid-template:
+      "temperament search" 70px
+      "breed search" 70px
+      "order search" 70px/
+      250px auto;
+
+    .temperament {
+      grid-area: temperament;
+      align-self: center;
+    }
+
+    .breed {
+      grid-area: breed;
+      align-self: center;
+    }
+
+    .order {
+      grid-area: order;
+      align-self: center;
+    }
+
+    .search {
+      grid-area: search;
+      width: 50px;
+      height: 50px;
+      border-radius: 999999px;
+      justify-self: center;
+      align-self: center;
+    }
+  }
 }
+
+@media (min-width: 600px) {
+  .form {
+    display: grid;
+    grid-template:
+      "temperament" 120px
+      "breed" 120px
+      "order" 120px
+      "search" auto/
+      250px ;
+
+    .temperament {
+      grid-area: temperament;
+      align-self: center;
+    }
+
+    .breed {
+      grid-area: breed;
+      align-self: center;
+    }
+
+    .order {
+      grid-area: order;
+      align-self: center;
+    }
+
+    .search {
+      grid-area: search;
+      width: 90px;
+      height: 25px;
+      font-size: 14px;
+      border-radius: 10px;
+      justify-self: center;
+      margin-top: 20px;
+    }
+  }
+}
+
+// .form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 10px;
+// }
+
+// .input {
+//   border-radius: 10px;
+// }
+
+// .button {
+//   width: 90px;
+//   height: 25px;
+//   margin-left: 20px;
+//   font-size: 14px;
+//   border-radius: 10px;
+// }
