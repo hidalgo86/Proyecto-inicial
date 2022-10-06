@@ -1,25 +1,33 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px calc(100vh - 100px);
-}
+  grid:
+    "controller" 50px
+    "card" auto/
+    auto;
 
-.containerButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-top: 2px solid #e5e5e5;
-}
+  .controller {
+    grid-area: controller;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
-.pag {
-  font-size: 15px;
-}
-
-.button {
-  width: 85px;
-  height: 25px;
-  font-size: 14px;
-  align-self: center;
-  border-radius: 10px;
+    .pag{
+      width: 80px;
+      flex: initial;
+      text-align: center;
+    }
+    
+    .button {
+      margin: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      font-size: 14px;
+      border-radius: 10px;
+      gap: 5px;
+      flex: initial;
+    }
+  }
 }

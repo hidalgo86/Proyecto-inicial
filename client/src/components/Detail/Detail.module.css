@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template: "navBar" 50px "main" auto;
+  grid: "navBar" 50px "main" auto;
 }
 body nav {
   grid-area: navBar;

@@ -5,7 +5,7 @@
 }
 .containerDogs {
   display: grid;
-  grid-template: "titulo titulo" 40px "image temperament" 150px "detalle temperament" 50px / 150px 140px;
+  grid-template: "titulo titulo" 40px "image temperament" 150px "detalle temperament" 60px / 140px 125px;
   text-align: center;
   margin: 3px 3px;
   border-radius: 20px;
@@ -31,8 +31,8 @@
   align-items: center;
 }
 .containerDogs .image img {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 20px;
 }
 .containerDogs .temperament {
@@ -43,6 +43,7 @@
   flex-direction: column;
   justify-content: start;
   color: black;
+  font-size: 14px;
 }
 .containerDogs .containerInfo {
   grid-area: detalle;
@@ -52,7 +53,7 @@
 }
 .containerDogs:hover {
   background-color: rgba(0, 225, 255, 0.884);
-  grid-template: "titulo titulo" 40px "image temperament" 150px "detalle temperament" 53px / 150px 143px;
+  grid-template: "titulo titulo" 40px "image temperament" 150px "detalle temperament" 63px / 140px 128px;
   margin: 0px 0px;
 }
 .containerDetail {

@@ -38,7 +38,7 @@ const Paginate = ({windowWidth}) => {
   return (
     <div className={styles.container}>
 
-      <div className={styles.containerButton}>
+      <div className={styles.controller}>
 
         <button className={styles.button} type="submit" onClick={previous}>
         <GrFormPrevious/> PREVIOUS
@@ -54,7 +54,7 @@ const Paginate = ({windowWidth}) => {
 
       </div>
 
-      <div>
+      <div className={styles.card}>
         <Dogs 
         pag={pagActual}
         pagDogs={pagDogs}
