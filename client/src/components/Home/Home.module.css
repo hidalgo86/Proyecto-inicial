@@ -48,7 +48,7 @@
 @media (min-width: 600px) {
   .container {
     display: grid;
-    grid: "navBar navBar" 70px "filter paginated" auto / 250px auto;
+    grid: "navBar" 70px "filter" "paginated" auto / auto;
   }
   .container .navBar {
     grid-area: navBar;

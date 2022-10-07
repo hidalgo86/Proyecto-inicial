@@ -27,33 +27,19 @@
 }
 @media (min-width: 600px) {
   .form {
-    display: grid;
-    grid-template: "temperament" 100px "breed" 100px "order" 100px "search" auto / 250px;
-    margin-left: 10px;
-  }
-  .form .temperament {
-    grid-area: temperament;
-    align-self: center;
+    display: flex;
+    flex: none;
+    justify-content: space-evenly;
+    padding-bottom: 5px;
   }
   .form .temperament .input {
     width: 100px;
   }
-  .form .breed {
-    grid-area: breed;
-    align-self: center;
-  }
-  .form .order {
-    grid-area: order;
-    align-self: center;
-  }
   .form .search {
-    grid-area: search;
     width: 90px;
     height: 25px;
     font-size: 14px;
     border-radius: 10px;
-    justify-self: center;
-    margin-top: 20px;
   }
   .input {
     width: 100px;

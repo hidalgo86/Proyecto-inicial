@@ -1,18 +1,59 @@
+// .container {
+//   display: grid;
+//   grid:
+//     "controller" 50px
+//     "card" auto/
+//     100%;
+
+//   .controller {
+//     grid-area: controller;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-top: 2px solid white;
+    
+
+//     .pag{
+//       width: 80px;
+//       text-align: center;
+//       flex: initial;
+//     }
+    
+//     .button {
+//       margin: 0px;
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       width: 100px;
+//       font-size: 14px;
+//       border-radius: 10px;
+//       gap: 5px;
+//       flex: initial;
+//     }
+//   }
+
+//   .card {
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-content: center;
+//   }
+// }
+
 .container {
   display: grid;
   grid:
-    "controller" 50px
-    "card" auto/
+  "card" auto
+  "controller" 50px/
     100%;
 
   .controller {
     grid-area: controller;
     display: flex;
     justify-content: center;
-    align-items: center;
-    border-top: 2px solid white;
+    align-items: flex-start;
+    padding-top: 5px;
     
-
     .pag{
       width: 80px;
       text-align: center;

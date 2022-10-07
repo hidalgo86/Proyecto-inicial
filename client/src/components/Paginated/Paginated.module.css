@@ -1,13 +1,13 @@
 .container {
   display: grid;
-  grid: "controller" 50px "card" auto / 100%;
+  grid: "card" auto "controller" 50px/100%;
 }
 .container .controller {
   grid-area: controller;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-top: 2px solid white;
+  align-items: flex-start;
+  padding-top: 5px;
 }
 .container .controller .pag {
   width: 80px;
