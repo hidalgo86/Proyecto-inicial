@@ -29,8 +29,8 @@ const Dog = ({
         </figure>
 
         <div className={styles.temperament}>
-          <b className={styles.Titulo}>Temperament:</b>
-          <p className={styles.detalle}>{temperament}</p>
+          <h3>Temperament:</h3>
+          <p>{temperament}</p>
         </div>
 
         <div className={styles.containerInfo}>

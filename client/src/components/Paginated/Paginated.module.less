@@ -3,19 +3,20 @@
   grid:
     "controller" 50px
     "card" auto/
-    auto;
+    100%;
 
   .controller {
     grid-area: controller;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 2px solid white;
     
 
     .pag{
       width: 80px;
-      flex: initial;
       text-align: center;
+      flex: initial;
     }
     
     .button {
@@ -29,5 +30,12 @@
       gap: 5px;
       flex: initial;
     }
+  }
+
+  .card {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
 }

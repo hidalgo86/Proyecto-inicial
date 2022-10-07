@@ -1,6 +1,7 @@
+@media (max-width: 600px) { 
 .container {
   display: grid;
-  grid-template-areas:
+  grid:
     "navBar"
     "filter"
     "paginated";
@@ -9,7 +10,7 @@
     grid-area: navBar;
     text-align: center;
     display: grid;
-    grid-template-areas:
+    grid:
       "img img"
       "searchBar searchBar"
       "buttonFilter buttonEdit";
@@ -56,39 +57,37 @@
     justify-content: center;
   }
 }
+}
 
 @media (min-width: 600px) {
   .container {
     display: grid;
     grid:
       "navBar navBar" 70px
-      "filter paginated" auto /
-       250px auto;
+      "filter paginated" auto/
+      250px auto;
 
     .navBar {
       grid-area: navBar;
-      display: grid;
-      grid:
-        "img searchBar buttonEdit" 65px/
-        100px auto 150px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       .img {
-        grid-area: img;
+        flex: initial;
+        margin-left: 20px;
         .image {
           width: 60px;
         }
       }
 
       .searchBar {
-        grid-area: searchBar;
-        align-items: center;
+        flex: initial;
       }
 
       .buttonEdit {
-        grid-area: buttonEdit;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        flex: initial;
+        margin-right: 20px;
 
         .Edit {
           width: 90px;

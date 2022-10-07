@@ -1,7 +1,5 @@
 .container {
-  margin: 0px;
-  padding: 0px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }

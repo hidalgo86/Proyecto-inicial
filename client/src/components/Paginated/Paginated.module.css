@@ -1,17 +1,18 @@
 .container {
   display: grid;
-  grid: "controller" 50px "card" auto / auto;
+  grid: "controller" 50px "card" auto / 100%;
 }
 .container .controller {
   grid-area: controller;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 2px solid white;
 }
 .container .controller .pag {
   width: 80px;
-  flex: initial;
   text-align: center;
+  flex: initial;
 }
 .container .controller .button {
   margin: 0px;
@@ -23,4 +24,10 @@
   border-radius: 10px;
   gap: 5px;
   flex: initial;
+}
+.container .card {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

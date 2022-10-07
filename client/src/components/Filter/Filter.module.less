@@ -2,7 +2,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 600px) {
+// @media (max-width: 600px) {
   .form {
     display: grid;
     grid-template:
@@ -35,21 +35,25 @@
       align-self: center;
     }
   }
-}
+// }
 
 @media (min-width: 600px) {
   .form {
     display: grid;
     grid-template:
-      "temperament" 120px
-      "breed" 120px
-      "order" 120px
+      "temperament" 100px
+      "breed" 100px
+      "order" 100px
       "search" auto/
       250px ;
+      margin-left: 10px;
 
     .temperament {
       grid-area: temperament;
       align-self: center;
+      .input {
+        width: 100px;
+      }
     }
 
     .breed {
@@ -71,5 +75,8 @@
       justify-self: center;
       margin-top: 20px;
     }
+  }
+  .input {
+    width: 100px;
   }
 }
