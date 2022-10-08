@@ -52,7 +52,7 @@
 }
 .containerDetail {
   display: grid;
-  grid-template: "titulo" 40px "image" 250px "detalle" 50px "temperament" auto / auto;
+  grid-template: "titulo" auto "image" auto "detalle" 50px "temperament" auto / auto;
   text-align: center;
   margin: 3px 3px;
   border-radius: 20px;
@@ -83,7 +83,7 @@
 .containerDetail .image img {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
 }

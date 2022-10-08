@@ -16,6 +16,12 @@ body main {
   align-items: center;
   margin-top: 10px;
 }
+body main .button {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  margin-top: 100px;
+}
 body .loading {
   display: flex;
   flex-direction: column;
