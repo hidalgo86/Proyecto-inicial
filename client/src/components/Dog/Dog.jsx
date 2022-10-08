@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import notImg from "../../img/Sin_imagen.jpg";
 import styles from "./Dog.module.css";
@@ -15,14 +15,16 @@ const Dog = ({
   component,
   dog,
 }) => {
+ 
   return (
     <Link to={`/home/${id}`}>
-      <main
+      <div
         className={
           component === "dogs" ? styles.containerDogs : styles.containerDetail
         }
       >
         <h3 className={styles.titulo}>{name}</h3>
+
 
         <figure className={styles.image}>
           <img src={image} alt={name} />
@@ -53,7 +55,7 @@ const Dog = ({
             </div>
           ) : null}
         </div>
-      </main>
+      </div>
     </Link>
   );
 };

@@ -4,41 +4,68 @@ import { Link } from "react-router-dom";
 import Dog from "../Dog/Dog";
 import { getDetailDog } from "../../redux/actions";
 import styles from "./Detail.module.css";
+import {FcNext} from "react-icons/fc"
+import {FcPrevious} from "react-icons/fc"
+
 
 export class Detail extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      dogAll: null,
+      idAll: null,
       dog: {},
       detail: {},
       loading: true,
+      id: Number(this.props.match.params.idRaza),
     };
   }
 
   componentDidMount() {
-    let id = this.props.match.params.idRaza;
+    let id = this.state.id;
     this.props.getDetailDog(id);
+
+    let dogsAll = JSON.parse(localStorage.getItem("dogs"));
 
     let detail = this.props.detail;
 
-    let dog = [];
-    dog = JSON.parse(localStorage.getItem("dogs")).find(
-      (dog) => dog.id === +id
-    );
+    let dog = dogsAll.find((dog) => dog.id === +id);
 
-    this.setState({ ...this.state, dog: dog, detail: detail });
+    let idAll = dogsAll.map((dog) => {
+      return dog.id;
+    });
+
+    this.setState({
+      ...this.state,
+      dog: dog,
+      detail: detail,
+      dogsAll: dogsAll,
+      idAll: idAll,
+    });
 
     localStorage.setItem("id", id);
-    id = localStorage.getItem("id");
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevProps.detail !== this.props.detail) {
       this.setState({
+        ...this.state,
         detail: this.props.detail,
         loading: false,
       });
+    }
+
+    if (prevState.id !== this.state.id) {
+      let id = this.state.id;
+      this.props.getDetailDog(id);
+
+      let detail = this.props.detail;
+
+      let dog = JSON.parse(localStorage.getItem("dogs")).find(
+        (dog) => dog.id === +id
+      );
+
+      this.setState({ ...this.state, dog: dog, detail: detail });
     }
   }
 
@@ -46,13 +73,39 @@ export class Detail extends Component {
     this.props.getDetailDog();
   }
 
+  previous = () => {
+    if (this.state.idAll.includes(this.state.id - 1)) {
+      this.setState({ ...this.state, id: this.state.id - 1 });
+      localStorage.setItem("id", this.state.id - 1);
+    } else  {
+      let index = this.state.idAll.indexOf(this.state.id);
+      if(this.state.idAll[index - 1]){
+        this.setState({ ...this.state, id: this.state.idAll[index - 1]});
+        localStorage.setItem("id", this.state.idAll[index - 1]);
+      };
+    }
+  };
+
+  next = () => {
+    if (this.state.idAll.includes(this.state.id + 1)) {
+      this.setState({ ...this.state, id: this.state.id + 1 });
+      localStorage.setItem("id", this.state.id + 1);
+    } else {
+      let index = this.state.idAll.indexOf(this.state.id);
+      if(this.state.idAll[index + 1]){
+        this.setState({ ...this.state, id: this.state.idAll[index + 1]});
+        localStorage.setItem("id", this.state.idAll[index + 1]);
+      };
+    }
+  };
+
   render() {
     const { dog, detail, loading } = this.state;
     return (
-      <body>
+      <div>
         <nav>
           <Link to="/home">
-            <button>Return</button>
+            <button className={styles.return}>Return</button>
           </Link>
         </nav>
 
@@ -63,9 +116,10 @@ export class Detail extends Component {
           </main>
         ) : (
           <main>
+            <button className={styles.button} onClick={this.previous}><FcPrevious/></button>
             <Dog
               component="detail"
-              id={+dog.id}
+              id={localStorage.getItem("id")}
               image={dog.image}
               name={dog.name}
               temperament={dog.temperament.join(", ")}
@@ -73,9 +127,10 @@ export class Detail extends Component {
               height={detail.height}
               lifeSpan={detail.lifeSpan}
             />
+            <button className={styles.button} onClick={this.next}><FcNext/></button>
           </main>
         )}
-      </body>
+      </div>
     );
   }
 }
