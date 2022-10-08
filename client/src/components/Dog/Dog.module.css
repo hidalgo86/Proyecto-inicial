@@ -52,7 +52,7 @@
 }
 .containerDetail {
   display: grid;
-  grid-template: "titulo" 40px "image" 250px "detalle" 50px "temperament" auto / 500px;
+  grid-template: "titulo" 40px "image" 250px "detalle" 50px "temperament" auto / auto;
   text-align: center;
   margin: 3px 3px;
   border-radius: 20px;
