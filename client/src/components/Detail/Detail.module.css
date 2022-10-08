@@ -34,7 +34,7 @@ body .loading {
   height: 25px;
   font-size: 14px;
   border-radius: 10px;
-  margin-right: 20px;
+  margin: 10px 20px;
 }
 .spinner {
   border: 4px solid white;
