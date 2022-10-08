@@ -60,6 +60,7 @@
   background-color: rgba(0, 225, 255, 0.541);
   margin: 10px;
   padding: 10px;
+  max-width: 400px;
 }
 .containerDetail .titulo {
   grid-area: titulo;
@@ -74,18 +75,19 @@
 .containerDetail .image {
   grid-area: image;
   border-radius: 20px;
-  width: 100%;
+  justify-self: center;
+  min-width: 250px;
+  max-width: 400px;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: red;
 }
 .containerDetail .image img {
-  display: flex;
   width: 100%;
   height: auto;
   border-radius: 20px;
-  object-fit: cover;
 }
 .containerDetail .containerInfo {
   grid-area: detalle;
