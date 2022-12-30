@@ -27,7 +27,7 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`, {
+    : new Sequelize(`postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/dogs`, {
         logging: false,
         native: false,
       });
