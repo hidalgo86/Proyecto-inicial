@@ -13,7 +13,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // la URL_base de las llamadas axios
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
+axios.defaults.baseURL = process.env.REACT_APP_API || "https://app-dogs.onrender.com/";
 
 ReactDOM.render(
   <React.StrictMode>
