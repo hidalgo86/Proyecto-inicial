@@ -1,3 +1,5 @@
+"use strict";
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -10,12 +12,12 @@ import { BrowserRouter } from "react-router-dom";
 import dotenv from "dotenv";
 dotenv.config();
 
-axios.defaults.baseURL =  process.env.REACT_APP_API || "http://localhost:3001";
+// la URL_base de las llamadas axios
+axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    
       <BrowserRouter>
         <App />
       </BrowserRouter>

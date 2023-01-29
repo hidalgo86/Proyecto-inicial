@@ -1,3 +1,6 @@
+'use strict'
+
+//acciones para el cambio de estado
 import {
   GET_ALL_DOGS,
   GET_NAME_DOGS,
@@ -7,6 +10,7 @@ import {
   GET_TEMPERAMENTS,
 } from "../types";
 
+// Estado Global inicial de redux
 const initialState = {
   dogs: [],
   detail: [],

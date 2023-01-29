@@ -1,3 +1,5 @@
+"use strict";
+
 import {
   GET_ALL_DOGS,
   GET_NAME_DOGS,
@@ -9,13 +11,27 @@ import {
 import axios from "axios";
 
 export const getAllDogs = () => {
+  // return async function (dispatch) {
+  //   try {
+  //     const response = await axios.get("/dogs");
+  //     dispatch({ type: GET_ALL_DOGS, payload: response.data });
+  //   } catch (error) {
+  //     dispatch({ type: GET_ALL_DOGS, payload: [error] })
+  //   }
+
   return function (dispatch) {
-    axios
-      .get("/dogs")
-      .then((response) =>
-        dispatch({ type: GET_ALL_DOGS, payload: response.data })
-      )
-      .catch((error) => dispatch({ type: GET_ALL_DOGS, payload: [error] }));
+    axios.get("/dogs").then(
+      (response) => dispatch({ type: GET_ALL_DOGS, payload: response.data }),
+      (error) => dispatch({ type: GET_ALL_DOGS, payload: [error.message] })
+    );
+
+    // return function (dispatch) {
+    // axios
+    //   .get("/dogs")
+    //   .then((response) =>
+    //     dispatch({ type: GET_ALL_DOGS, payload: response.data })
+    //   )
+    //   .catch((error) => dispatch({ type: GET_ALL_DOGS, payload: [error] }));
   };
 };
 
@@ -117,7 +133,6 @@ export const createDogs = ({
   lifeSpanMax,
   temperaments,
 }) => {
-
   return function (dispatch) {
     axios
       .post("/dogs", {

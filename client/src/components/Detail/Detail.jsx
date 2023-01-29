@@ -29,7 +29,7 @@ export class Detail extends Component {
 
     let detail = this.props.detail;
 
-    let dog = dogsAll.find((dog) => dog.id === +id);
+    let dog = dogsAll.find((dog) => dog.id === Number(id));
 
     let idAll = dogsAll.map((dog) => {
       return dog.id;
@@ -86,6 +86,7 @@ export class Detail extends Component {
     }
   };
 
+  // 
   next = () => {
     if (this.state.idAll.includes(this.state.id + 1)) {
       this.setState({ ...this.state, id: this.state.id + 1 });
