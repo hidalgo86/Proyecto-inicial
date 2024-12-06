@@ -2,17 +2,17 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { PGUSER, PGPASSWORD, PGHOST, PGDATABASE, PGPORT } = process.env;
+const { PG_USER, PG_PASSWORD, PG_HOST, PG_DATABASE, PG_PORT } = process.env;
 
 let sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
-        database: PGDATABASE,
+        database: PG_DATABASE,
         dialect: "postgres",
-        host: PGHOST,
-        port: PGPORT,
-        username: PGUSER,
-        password: PGPASSWORD,
+        host: PG_HOST,
+        port: PG_PORT,
+        username: PG_USER,
+        password: PG_PASSWORD,
         pool: {
           max: 3,
           min: 1,
@@ -27,7 +27,7 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(`postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/dogs`, {
+    : new Sequelize(`postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}/${PG_DATABASE}`, {
         logging: false,
         native: false,
       });

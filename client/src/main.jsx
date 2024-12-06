@@ -2,18 +2,16 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./main.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { BrowserRouter } from "react-router-dom";
-import dotenv from "dotenv";
-dotenv.config();
 
 // la URL_base de las llamadas axios
-axios.defaults.baseURL = process.env.REACT_APP_API || "https://app-dogs.onrender.com/";
+axios.defaults.baseURL = import.meta.env.VITE_API;
 
 ReactDOM.render(
   <React.StrictMode>

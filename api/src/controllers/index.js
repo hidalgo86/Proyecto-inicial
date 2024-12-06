@@ -2,10 +2,8 @@ const { default: axios } = require("axios");
 
 const dogsAll = async (name) => {
   try {
-    let api = await axios.get(
-      `https://api.thedogapi.com/v1/breeds`
-    );
-
+    let api = await axios.get(`https://api.thedogapi.com/v1/breeds`);
+    console.log(api);
     let dogs = api.data.map((dog) => {
       const weightArray =
         +dog.weight.metric > 0
@@ -32,7 +30,7 @@ const dogsAll = async (name) => {
             : +weightArray[1],
         lifeSpan: dog.life_span,
         temperament: dog.temperament ? dog.temperament.split(", ") : [],
-        image: dog.image.url,
+        image: `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`,
       };
     });
 
@@ -50,9 +48,7 @@ const dogsAll = async (name) => {
 
 const dogsId = async (idRaza) => {
   try {
-    let api = await axios.get(
-      `https://api.thedogapi.com/v1/breeds/${idRaza}`
-    );
+    let api = await axios.get(`https://api.thedogapi.com/v1/breeds/${idRaza}`);
     let data = api.data;
 
     return {
@@ -65,13 +61,9 @@ const dogsId = async (idRaza) => {
   }
 };
 
-
-
 const temperaments = async () => {
   try {
-    let api = await axios.get(
-      `https://api.thedogapi.com/v1/breeds`
-    );
+    let api = await axios.get(`https://api.thedogapi.com/v1/breeds`);
     let data = api.data.map((item) =>
       item.temperament ? item.temperament.split(", ") : []
     );

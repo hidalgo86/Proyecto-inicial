@@ -8,7 +8,7 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   const temperaments = useSelector((state) => state.temperaments);
-
+  console.log(temperaments)
   const [form, setForm] = useState({
     temperament: "All",
     breed: "All",
