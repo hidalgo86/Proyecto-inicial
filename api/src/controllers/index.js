@@ -3,7 +3,6 @@ const { default: axios } = require("axios");
 const dogsAll = async (name) => {
   try {
     let api = await axios.get(`https://api.thedogapi.com/v1/breeds`);
-    console.log(api);
     let dogs = api.data.map((dog) => {
       const weightArray =
         +dog.weight.metric > 0
